@@ -16,10 +16,40 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 Auth::routes();
 
 Route::group(['middleware'=>['preventbackbutton','auth']], function(){
+    
+    //home user
+    Route::get('/kuisioner', function () {
+        return view('datahome/kuisioner');
+    });
+    
+     // kuisioner
+    Route::get('/kuisionertingkatI', function () {
+        return view('datahome/tingkat/kuisionertingkatI');
+    });
+    
+    //tingkat 1
+    Route::get('/kuisionertingkatI', function () {
+        return view('datahome/tingkat/kuisionertingkatI');
+    });
+    
+    //post dokumen
+    Route::get('/kuisionertingkatI', function () {
+        return view('datahome/tingkat/postingkatI/dokumenI');
+    });
 
+
+
+
+
+
+
+    
     Route::get('/home', 'HomeController@index')->name('home');
     // Route::middleware('role:admin')->get('/dashboard', 'HomeController@index')->name('dashboard');
     
