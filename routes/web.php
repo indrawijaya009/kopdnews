@@ -17,6 +17,11 @@ Route::get('/', function () {
 });
 
 
+// get databse kuisioners
+Route::get('/user', 'UserController@datauser');
+
+
+
 
 
 Auth::routes();
