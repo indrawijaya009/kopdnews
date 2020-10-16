@@ -1,73 +1,49 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-
-                <!-- @foreach($data as $show)
-                <div>
-
-                {{$show->name}}
-                </br>
-                </div>
-                @endforeach -->
-
-                <head>
 <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
+  .uper {
+    margin-top: 40px;
+  }
 </style>
-</head>
-<body>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>email</th>
-    <th>view</th>
-  </tr>
-  @foreach($data as $show)
-                <div> 
-  <tr>
-    <td>{{$show->name}}</td>
-    <td>{{$show->email}}</td>
-    <td>
-    <a href="{{url('/edit')}" class="btn btn-xs btn-primary">Edit</a> |
-    <a href="#" class="btn btn-xs btn-danger" onclick="return confirm('yakin?');">Delete</a>
-    </td>
-  </tr>
-                </div>
-                @endforeach
-</table>
-</body>
-            </div>
-        </div>
-    </div>
+<div class="card uper">
+  <div class="card-header">
+    Add Item
+  </div>
+  <div class="card-body">
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div><br />
+    @endif
+      <form method="post" action="submit">
+      <div class="form-group">
+             <select class="form-control" name="name">
+      @foreach($kuisi as $d)
+             <option value="{{$d->id}}">{{$d->id }} | {{$d->name }}</option>
+      @endforeach
+             </select>
+          </div>
+          <div class="form-group">
+              @csrf
+              <label for="name">Tingkat 1:</label>
+              <input type="text" class="form-control" name="tingkat_I"/>
+          </div>
+          <div class="form-group">
+              <label for="name">Tingkat 2</label>
+              <input type="text" class="form-control" name="tingkat_II"/>
+          </div>
+          <div class="form-group">
+              <label for="name">Tingkat 3</label>
+              <input type="text" class="form-control" name="user_id"/>
+          </div>
+          <button type="submit" class="btn btn-primary">Create Item</button>
+      </form>
+  </div>
 </div>
+
 @endsection

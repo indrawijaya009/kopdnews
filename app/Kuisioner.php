@@ -11,10 +11,11 @@ class Kuisioner extends Authenticatable
 {
     use Notifiable,HasRoles;
 
-    protected $fillable = [
-        'tingkat_I', 'tingkat_II', 'tingkat_III','tingkat_IV',
-    ];
-
+    // protected $fillable = [
+    //     'tingkat_I', 'tingkat_II', 'tingkat_III','tingkat_IV','user_id',
+    // ];
+    protected $table ="kuisioners";
+    
     public function user(){
         return $this->belongsTo('App\User');
     }

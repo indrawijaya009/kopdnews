@@ -27,9 +27,11 @@ Route::get('users/{users}/user','UserController@userdatakuisioner');
 Route::delete('user/{users}','UserController@destroy');
 
 /////validator
-Route::get('form', 'FormController@create')->name('form.create');
-Route::post('form', 'FormController@store')->name('form.store');
-
+// Route::get('form', 'FormController@create')->name('form.create');
+// Route::post('form', 'KuisionerController@create')->name('form.store');
+Route::view('/form', 'user');
+Route::post('submit','KuisionerController@create');
+Route::get('/userroles', 'KuisionerController@create');
 
 
 Auth::routes();
