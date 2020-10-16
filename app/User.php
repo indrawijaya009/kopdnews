@@ -20,6 +20,10 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    function kuisi(){
+        return $this->hasMany('App\Kuisioner');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

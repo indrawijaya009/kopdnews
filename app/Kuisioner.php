@@ -14,4 +14,8 @@ class Kuisioner extends Authenticatable
     protected $fillable = [
         'tingkat_I', 'tingkat_II', 'tingkat_III','tingkat_IV',
     ];
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

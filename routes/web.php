@@ -18,9 +18,17 @@ Route::get('/', function () {
 
 
 // get databse kuisioners
-Route::get('/user', 'UserController@datauser');
+Route::get('/user/{article}', 'UserController@show_article');
 
+Route::get('/data', 'UserController@kuisione');
 
+Route::get('users/{users}/user','UserController@userdatakuisioner');
+
+Route::delete('user/{users}','UserController@destroy');
+
+/////validator
+Route::get('form', 'FormController@create')->name('form.create');
+Route::post('form', 'FormController@store')->name('form.store');
 
 
 
@@ -48,18 +56,11 @@ Route::group(['middleware'=>['preventbackbutton','auth']], function(){
         return view('datahome/tingkat/postingkatI/dokumenI');
     });
 
-
-
-
-
-
-
     
     Route::get('/home', 'HomeController@index')->name('home');
     // Route::middleware('role:admin')->get('/dashboard', 'HomeController@index')->name('dashboard');
     
-    Route::middleware('role:admin')->get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::middleware('role:admin')->get('/dashboard', 'UserController@kuisione'
+    )->name('dashboard');
     
     });
