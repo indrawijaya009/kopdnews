@@ -25,6 +25,21 @@
     <li > <a href="/">Tingkat IV</a></li>
 </ul>
         </div>
+
+        <form method="post" action="submit">
+
+<div class="form-group">
+    @csrf
+    <label for="name">Tingkat 1:</label>
+    <input type="text" class="form-control" name="name"/>
+</div>
+<div class="form-group">
+    <label for="name">Tingkat 2</label>
+    <input type="text" class="form-control" name="datapem"/>
+</div>
+<button type="submit" class="btn btn-primary">Create Item</button>
+</form>
+
             </div>
     </div>
 </div>

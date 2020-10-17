@@ -20,26 +20,32 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="submit">
-      <div class="form-group">
-             <select class="form-control" name="name">
+      <form method="post" action="{{route('userroles')}}">
+      @csrf
+         <div class="form-group">
+             <select class="form-control" name="user_id">
       @foreach($kuisi as $d)
-             <option value="{{$d->id}}">{{$d->id }} | {{$d->name }}</option>
+             <option value="{{$d->id}}">{{$d->name }}</option>
       @endforeach
              </select>
           </div>
+  
           <div class="form-group">
               @csrf
-              <label for="name">Tingkat 1:</label>
-              <input type="text" class="form-control" name="tingkat_I"/>
+              <label >Tingkat 1:</label>
+              <input type="text" class="form-control" name="name"/>
           </div>
           <div class="form-group">
-              <label for="name">Tingkat 2</label>
-              <input type="text" class="form-control" name="tingkat_II"/>
+              <label >Tingkat 2</label>
+              <input type="text" class="form-control" name="datasatu"/>
           </div>
           <div class="form-group">
-              <label for="name">Tingkat 3</label>
-              <input type="text" class="form-control" name="user_id"/>
+              <label >Tingkat 3</label>
+              <input type="text" class="form-control" name="datadua"/>
+          </div>
+          <div class="form-group">
+              <label >Tingkat 4</label>
+              <input type="text" class="form-control" name="datatiga"/>
           </div>
           <button type="submit" class="btn btn-primary">Create Item</button>
       </form>

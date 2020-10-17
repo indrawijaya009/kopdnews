@@ -17,21 +17,38 @@ Route::get('/', function () {
 });
 
 
+
+
+
+
+
+Route::view('/form', 'datahome/kuisioner');
+// Route::post('submit','KuisionerController@create');
+
+// Route::view('/uform', 'user');
+// Route::post('submit','KuisionerController@insert');
+
+
 // get databse kuisioners
 Route::get('/user/{article}', 'UserController@show_article');
 
 Route::get('/data', 'UserController@kuisione');
 
 Route::get('users/{users}/user','UserController@userdatakuisioner');
-
 Route::delete('user/{users}','UserController@destroy');
 
 /////validator
 // Route::get('form', 'FormController@create')->name('form.create');
 // Route::post('form', 'KuisionerController@create')->name('form.store');
-Route::view('/form', 'user');
-Route::post('submit','KuisionerController@create');
-Route::get('/userroles', 'KuisionerController@create');
+
+
+Route::get('/userroles', 'KuisionerController@create')->name('userroles');
+Route::post('/userroles', 'KuisionerController@insert')->name('userroles');
+// Route::post('submit','KuisionerController@insert');
+
+Route::get('/user/kuisioner', 'KuisionerController@store');
+
+Route::view('vie', 'user');
 
 
 Auth::routes();

@@ -2,19 +2,14 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\Model;
 
-class Kuisioner extends Authenticatable
+class Kuisioner extends Model
 {
-    use Notifiable,HasRoles;
-
     // protected $fillable = [
-    //     'tingkat_I', 'tingkat_II', 'tingkat_III','tingkat_IV','user_id',
+    //     'name', 'datasatu', 'datadua','datatiga','user_id',
     // ];
-    protected $table ="kuisioners";
+    protected $guarded =[];
     
     public function user(){
         return $this->belongsTo('App\User');
