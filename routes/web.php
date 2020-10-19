@@ -30,7 +30,11 @@ Route::view('/form', 'datahome/kuisioner');
 
 
 // get databse kuisioners
-Route::get('/user/{article}', 'UserController@show_article');
+Route::get('blog', function(){
+    return view('datahome/kuisioner');
+});
+Route::post('/post_rcppemba', 'KuisionerController@post_rcppemba');
+
 
 Route::get('/data', 'UserController@kuisione');
 
@@ -43,7 +47,7 @@ Route::delete('user/{users}','UserController@destroy');
 
 
 Route::get('/userroles', 'KuisionerController@create')->name('userroles');
-Route::post('/userroles', 'KuisionerController@insert')->name('userroles');
+Route::post('/userroless', 'KuisionerController@insert')->name('userroless');
 // Route::post('submit','KuisionerController@insert');
 
 Route::get('/user/kuisioner', 'KuisionerController@store');

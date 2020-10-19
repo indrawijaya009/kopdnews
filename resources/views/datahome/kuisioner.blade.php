@@ -26,7 +26,7 @@
 </ul>
         </div>
 
-        <form method="post" action="submit">
+        <form method="post" action="post_rcppemba" enctype="multipart/form-data">
 
 <div class="form-group">
     @csrf
@@ -35,7 +35,7 @@
 </div>
 <div class="form-group">
     <label for="name">Tingkat 2</label>
-    <input type="text" class="form-control" name="datapem"/>
+    <input type="file" class="form-control" name="datapem"/>
 </div>
 <button type="submit" class="btn btn-primary">Create Item</button>
 </form>

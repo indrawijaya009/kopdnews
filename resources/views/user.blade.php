@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Add Item
+    Upload data Tingkat I
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -20,9 +20,10 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{route('userroles')}}">
+      <form method="post" action="{{route('userroless')}}" enctype="multipart/form-data">
       @csrf
          <div class="form-group">
+      <label >Pilih role sesua user login</label>
              <select class="form-control" name="user_id">
       @foreach($kuisi as $d)
              <option value="{{$d->id}}">{{$d->name }}</option>
@@ -32,20 +33,20 @@
   
           <div class="form-group">
               @csrf
-              <label >Tingkat 1:</label>
-              <input type="text" class="form-control" name="name"/>
+              <label > upload</label>
+              <input type="file" class="form-control" name="name"/>
           </div>
           <div class="form-group">
-              <label >Tingkat 2</label>
-              <input type="text" class="form-control" name="datasatu"/>
+              <label >tambah upload</label>
+              <input type="file" class="form-control" name="datasatu"/>
           </div>
           <div class="form-group">
-              <label >Tingkat 3</label>
-              <input type="text" class="form-control" name="datadua"/>
+              <label >tambah upload</label>
+              <input type="file" class="form-control" name="datadua"/>
           </div>
           <div class="form-group">
-              <label >Tingkat 4</label>
-              <input type="text" class="form-control" name="datatiga"/>
+              <label >tambah upload</label>
+              <input type="file" class="form-control" name="datatiga"/>
           </div>
           <button type="submit" class="btn btn-primary">Create Item</button>
       </form>
