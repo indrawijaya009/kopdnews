@@ -8,7 +8,10 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Upload data Tingkat I  | download kuisioner   <button type="submit" class="btn btn-primary" style ="margin-left:10px;">download</button>
+    Upload data Tingkat I  | download kuisioner  
+    <a href="/downloadFile" >
+     <button class="btn btn-primary" style ="margin-left:10px;">download</button>
+      </a>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -24,7 +27,7 @@
       @csrf
          <div class="form-group">
       <label >Pilih role sesua user login</label>
-             <select class="form-control" name="user_id">
+             <select class="form-control" id="user_id" name="user_id">
       @foreach($kuisi as $d)
              <option value="{{$d->id}}">{{$d->name }}</option>
       @endforeach
@@ -34,19 +37,23 @@
           <div class="form-group">
               @csrf
               <label > upload</label>
-              <input type="file" class="form-control" name="name"/>
+              <input type="file" class="form-control" id="name" name="name"/>
           </div>
           <div class="form-group">
               <label >tambah upload</label>
-              <input type="file" class="form-control" name="datasatu"/>
+              <input type="file" class="form-control" id="datasatu" name="datasatu"/>
           </div>
           <div class="form-group">
               <label >tambah upload</label>
-              <input type="file" class="form-control" name="datadua"/>
+              <input type="file" class="form-control" id="datadua" name="datadua"/>
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
               <label >tambah upload</label>
-              <input type="file" class="form-control" name="datatiga"/>
+              <input type="file" class="form-control" id="datatiga" name="datatiga"/>
+          </div> -->
+          <div class="form-group">
+              <label >tambah multipel upload</label>
+              <input type="file" class="form-control" id="datatiga" multiple name="datatiga"/>
           </div>
           <button type="submit" class="btn btn-primary">Upload file </button>
       </form>

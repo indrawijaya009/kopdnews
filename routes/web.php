@@ -31,7 +31,7 @@ Route::view('/form', 'datahome/kuisioner');
 Route::get('blog', function(){
     return view('datahome/kuisioner');
 });
-Route::post('/post_rcppemba', 'KuisionerController@post_rcppemba');
+Route::post('/post_rcppemba', 'KuisionerController@post_rcppemba')->name('post_rcppemba');
 
 
 Route::get('/data', 'UserController@kuisione');
@@ -41,9 +41,15 @@ Route::delete('user/{users}','UserController@destroy');
 
 /////validator
 // Route::get('form', 'FormController@create')->name('form.create');
-// Route::post('form', 'KuisionerController@create')->name('form.store');
+// Route::get('/download', function(){
+//     $file = public_path()."/indra.pdf";
+//     $headers = array(
+//         'Content-Type: application/pdf',
+//     ); 
+//     return Response::download($file, "Input Group.pdf", $headers);
+// });
 
-
+Route::get('downloadFile', 'KuisionerController@downloadFile');
 
 
 // Route::get('/kuisionertingkatI', 'KuisionerController@create')->name('kuisionertingkatI');

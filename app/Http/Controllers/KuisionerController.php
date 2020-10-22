@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Kuisioner;
 use App\User;
 use App\Rcppem;
+use Storage;
 
 class KuisionerController extends Controller
 {
@@ -67,6 +68,16 @@ class KuisionerController extends Controller
         $user->datapem = $path;
         $user->save();
     }
+
+    public function downloadFile()
+    {
+       try{
+        return Storage::disk('local')->download("public/datapen.docx");
+       }catch(\Exception $e){
+
+           return $e->getMessage();
+       }
+    }	
 
 
 }

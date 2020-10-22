@@ -100,20 +100,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 
-                            <ul>
-                                <li> <a href="">kuisoner</a></li>
-                                <li> <a href="/">rancangan pembangunan</a></li>
-                                <li> <a href="/">penjaminan mutu</a></li>
-                                <li> <a href="/">standar operasional</a></li>
-                                <li> <a href="/">pendidikan dan pelatihan</a></li>
-                                <li> <a href="/">analisi kebijakan</a></li>
-                                <li> <a href="/">manajemen sumber</a></li>
-                                <li> <a href="/">manajemen resiko</a></li>
-                                <li> <a href="/">pengukuran kinerja</a></li>
-                                <li> <a href="/">pengembangan inovasi</a></li>
-                                <li> <a href="/">budaya organisasi</a></li>
-                            </ul> -->
               
             </div>
         </div>
