@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Upload data Tingkat I
+    Upload data Tingkat I  | download kuisioner   <button type="submit" class="btn btn-primary" style ="margin-left:10px;">download</button>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -48,7 +48,7 @@
               <label >tambah upload</label>
               <input type="file" class="form-control" name="datatiga"/>
           </div>
-          <button type="submit" class="btn btn-primary">Create Item</button>
+          <button type="submit" class="btn btn-primary">Upload file </button>
       </form>
   </div>
 </div>

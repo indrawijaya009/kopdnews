@@ -20,8 +20,6 @@ Route::get('/', function () {
 
 
 
-
-
 Route::view('/form', 'datahome/kuisioner');
 // Route::post('submit','KuisionerController@create');
 
@@ -46,8 +44,11 @@ Route::delete('user/{users}','UserController@destroy');
 // Route::post('form', 'KuisionerController@create')->name('form.store');
 
 
-Route::get('/userroles', 'KuisionerController@create')->name('userroles');
-Route::post('/userroless', 'KuisionerController@insert')->name('userroless');
+
+
+// Route::get('/kuisionertingkatI', 'KuisionerController@create')->name('kuisionertingkatI');
+// Route::post('/kuisionertingkatsI', 'KuisionerController@insert')->name('kuisionertingkatsI');
+
 // Route::post('submit','KuisionerController@insert');
 
 Route::get('/user/kuisioner', 'KuisionerController@store');
@@ -75,9 +76,11 @@ Route::group(['middleware'=>['preventbackbutton','auth']], function(){
     });
     
     //post dokumen
-    Route::get('/kuisionertingkatI', function () {
-        return view('datahome/tingkat/postingkatI/dokumenI');
-    });
+    Route::get('/userroles', 'KuisionerController@create')->name('userroles');
+    Route::post('/userroless', 'KuisionerController@insert')->name('userroless');
+    // Route::get('/kuisionertingkatI', function () {
+    //     return view('datahome/tingkat/postingkatI/dokumenI');
+    // });
 
     
     Route::get('/home', 'HomeController@index')->name('home');

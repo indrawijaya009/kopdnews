@@ -1,36 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Kuisioner data</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    Dokumen I
-    <a href="/download" style="background:#333ab7; color:fff; padding:12px; margin:5px; display:block; text-decoration:none;">Download Now</a>
-
-            <form action="/uploads" enctype="multipart/form-data" method="POST">
-        {{ csrf_field() }}
-        <p>
-            <label for="photo">
-                <input type="file" name="photo" id="photo">
-            </label>
-        </p>
-        <button>Upload</button>
-    </form>
-                </div>
-           
-            <div>
-        </div>
-            </div>
-    </div>
+<style>
+  .uper {
+    margin-top: 40px;
+  }
+</style>
+<div class="card uper">
+  <div class="card-header">
+    Upload data Tingkat I
+  </div>
+  <div class="card-body">
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div><br />
+    @endif
+      <form method="post" action="{{route('kuisionertingkatsI')}}" enctype="multipart/form-data">
+      @csrf
+         <div class="form-group">
+      <label >Pilih role sesua user login</label>
+             <select class="form-control" name="user_id">
+      @foreach($kuisi as $d)
+             <option value="{{$d->id}}">{{$d->name }}</option>
+      @endforeach
+             </select>
+          </div>
+  
+          <div class="form-group">
+              @csrf
+              <label > upload</label>
+              <input type="file" class="form-control" name="name"/>
+          </div>
+          <div class="form-group">
+              <label >tambah upload</label>
+              <input type="file" class="form-control" name="datasatu"/>
+          </div>
+          <div class="form-group">
+              <label >tambah upload</label>
+              <input type="file" class="form-control" name="datadua"/>
+          </div>
+          <div class="form-group">
+              <label >tambah upload</label>
+              <input type="file" class="form-control" name="datatiga"/>
+          </div>
+          <button type="submit" class="btn btn-primary">Create Item</button>
+      </form>
+  </div>
 </div>
+
 @endsection
