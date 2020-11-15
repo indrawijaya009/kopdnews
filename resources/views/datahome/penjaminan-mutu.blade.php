@@ -15,9 +15,9 @@
                      
                     <div class="col-sm-4">
                         <div class="card">
-                            <a href="{{url('/kuisioner/'.$i)}}" style="margin:10px;">kuisoner tingkat <?= $i ?></a>
+                            <a href="{{url('/penjaminan-mutu/'.$i)}}" style="margin:10px;">Penjaminan Mutu Tingkat <?= $i ?></a>
                             <div class="container">
-                                <h4><b>Kuisioner tingkat <?= $i ?></b></h4>
+                                <h4><b>Penjaminan Mutu Tingkat <?= $i ?></b></h4>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKuisionersTable extends Migration
+class CreateManajemenResikosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateKuisionersTable extends Migration
      */
     public function up()
     {
-        Schema::create('kuisioners', function (Blueprint $table) {
+        Schema::create('manajemen_resikos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->Integer('tingkat');
             $table->string('no_dokumen')->nullable();
@@ -34,6 +34,6 @@ class CreateKuisionersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kuisioners');
+        Schema::dropIfExists('manajemen_resikos');
     }
 }

@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
-use App\Kuisioner;
+use App\Standar_operasional;
 use App\User;
 use App\Rcppem;
 use Storage;
 use Auth;
 // use Request;
 
-class KuisionerController extends Controller
+class StandarOperasionalController extends Controller
 {
     public function datedua()
     {
@@ -29,14 +29,14 @@ class KuisionerController extends Controller
 
     public function create()
     {
-        return view('kuisioner');
+        return view('standar-operasional');
     }
 
     public function insert(Request $request)
     {
         // dd($request);
         $user = Auth::user()->id;
-        $data =new Kuisioner([
+        $data =new Standar_operasional([
             'user_id'        => $user,
             'tingkat'        => $request->tingkat,
             'no_dokumen'     => $request->no_dokumen

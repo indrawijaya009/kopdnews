@@ -6,9 +6,13 @@
     margin-top: 40px;
   }
 </style>
+@php
+$tingkat = Request::segment(2);
+$no_dokumen = Request::segment(3);
+@endphp
 <div class="card uper">
   <div class="card-header">
-    Upload data Tingkat I  | download kuisioner  
+    Upload data Tingkat <?= $tingkat ?> | download standar operasional  
     <a href="/downloadFile" >
      <button class="btn btn-primary" style ="margin-left:10px;">download</button>
       </a>
@@ -23,12 +27,8 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{route('userroless')}}" enctype="multipart/form-data">
+      <form method="post" action="{{route('standar-operasional')}}" enctype="multipart/form-data">
       @csrf
-      @php
-          $tingkat = Request::segment(2);
-          $no_dokumen = Request::segment(3);
-      @endphp
   
           <div class="form-group">
               @csrf

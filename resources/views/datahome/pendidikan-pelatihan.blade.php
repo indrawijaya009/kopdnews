@@ -15,9 +15,9 @@
                      
                     <div class="col-sm-4">
                         <div class="card">
-                            <a href="{{url('/kuisioner/'.$i)}}" style="margin:10px;">kuisoner tingkat <?= $i ?></a>
+                            <a href="{{url('/pendidikan-pelatihan/'.$i)}}" style="margin:10px;">Pendidikan dan Pelatihan Tingkat <?= $i ?></a>
                             <div class="container">
-                                <h4><b>Kuisioner tingkat <?= $i ?></b></h4>
+                                <h4><b>Pendidikan dan Pelatihan Tingkat <?= $i ?></b></h4>
                             </div>
                         </div>
                     </div>
