@@ -34,65 +34,65 @@
                             <tr>
                                 <td>1</td>
                                 <td>Kuesioner</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <td><a href="{{url('dokumen.show/kuisioner/'.$i."_".$id)}}">lihat dokumen</td>
+                                @endfor
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>Rancangan Pembangunan</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <td><a href="{{url('dokumen.show/rancangan_pembangunan/'.$i."_".$id)}}">lihat dokumen</td>
+                                @endfor
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>Penjaminan Mutu</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <td><a href="{{url('dokumen.show/penjaminan_mutu/'.$i."_".$id)}}">lihat dokumen</td>
+                                @endfor
                             </tr>
                             <tr>
                                 <td>4</td>
                                 <td>Standar Operasional</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <td><a href="{{url('dokumen.show/standar_operasional/'.$i."_".$id)}}">lihat dokumen</td>
+                                @endfor
                             </tr>
                             <tr>
                                 <td>4</td>
                                 <td>Pendidikan dan Pelatihan</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <td><a href="{{url('dokumen.show/pendidikan_pelatihan/'.$i."_".$id)}}">lihat dokumen</td>
+                                @endfor
                             </tr>
                             <tr>
                                 <td>6</td>
                                 <td>Analisis Kebijakan</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <td><a href="{{url('dokumen.show/analisis_kebijakan/'.$i."_".$id)}}">lihat dokumen</td>
+                                @endfor
                             </tr>
                             <tr>
                                 <td>7</td>
                                 <td>Manajemen Sumber</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <td><a href="{{url('dokumen.show/manajemen_sumber/'.$i."_".$id)}}">lihat dokumen</td>
+                                @endfor
                             </tr>
                             <tr>
                                 <td>8</td>
                                 <td>Manajemen Resiko</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <td><a href="{{url('dokumen.show/manajemen_resiko/'.$i."_".$id)}}">lihat dokumen</td>
+                                @endfor
                             </tr>
                             <tr>
                                 <td>9</td>
-                                <td>Pengukuran Kinerjas</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
-                                <td>lihat dokumen</td>
+                                <td>Pengukuran Kinerja</td>
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <td><a href="{{url('dokumen.show/pengukuran_kinerja/'.$i."_".$id)}}">lihat dokumen</td>
+                                @endfor
                             </tr>
                         </tbody>
                     </table>

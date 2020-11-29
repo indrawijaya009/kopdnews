@@ -29,7 +29,7 @@ class KuisionerController extends Controller
 
     public function create()
     {
-        return view('kuisioner');
+        return view('Kuisioner');
     }
 
     public function insert(Request $request)

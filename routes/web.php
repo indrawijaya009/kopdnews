@@ -185,6 +185,9 @@ Route::group(['middleware'=>['preventbackbutton','auth']], function(){
     Route::get('/dashboard/{id}', 'UserController@destroy')->name('dashboard.destroy');
     Route::get('/dashboard.show/{id}', 'UserController@show')->name('dashboard.show');
 
+    //SHOW DATA ADMIN
+    Route::get('/dokumen.show/kuisioner/{id}', 'DokumenController@kuisioner')->name('dokumen.show');
+
     Route::get('regis', function(){
         return view('auth/register');
     });
