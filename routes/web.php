@@ -84,6 +84,7 @@ Route::group(['middleware'=>['preventbackbutton','auth']], function(){
     //post dokumen
     Route::get('/kuisioner-dokumen/{tingkat}/{id}', 'KuisionerController@create')->name('userroles');
     Route::post('/kuisisoner', 'KuisionerController@insert')->name('kuisioner');
+ 
     
 
     //Rancangan Pembangunan
@@ -187,6 +188,7 @@ Route::group(['middleware'=>['preventbackbutton','auth']], function(){
 
     //SHOW DATA ADMIN
     Route::get('/dokumen.show/kuisioner/{id}', 'DokumenController@kuisioner')->name('dokumen.show');
+    Route::get('/show-data/kuisioner/{id}/{dokumen}', 'ShowDataController@kuisioner');
 
     Route::get('regis', function(){
         return view('auth/register');

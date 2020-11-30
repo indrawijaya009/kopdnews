@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 use App\Kuisioner;
 use App\User;
@@ -46,8 +47,13 @@ class KuisionerController extends Controller
             if($request->file('file1') == null ){
                 $pathnam = "";
             } else {
-                $pathnam= $request->file('file1')->store('public/tingkatI');
-                $data->file1 = $pathnam;
+                $pathnam= $request->file('file1');
+                
+                $extensi = $pathnam->getClientOriginalExtension();
+                $name = $pathnam->getClientOriginalName();
+                $new_name = date('y-m-d').'-'.$name;
+                $pathnam->move(public_path('storage/kuisioner'),$new_name);
+                $data->file1 = $new_name;
             }
 
             if($request->file('file2') == null){

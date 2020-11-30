@@ -19,6 +19,6 @@ class DokumenController extends Controller
 
         $kuisioner = Kuisioner::where(['user_id'=>$id,'tingkat'=>$tingkat])->get();
 
-        return view('show_dokumen', compact('kuisioner'));
+        return view('show_dokumen', compact('kuisioner', 'tingkat', 'id'));
     }
 }

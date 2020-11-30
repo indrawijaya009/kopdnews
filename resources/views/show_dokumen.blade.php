@@ -10,14 +10,11 @@
              </br>
                 <div>
                     <div class="row">
-                        @php
-                            $tingkat = Request::segment(2);
-                        @endphp
 
                         @for ($i = 1; $i < 4; $i++)
                             <div class="col-sm-4">
                                 <div class="card">
-                                    <a href="{{url('kuisioner-dokumen/'.$tingkat.'/'.$i)}}" style="margin:10px;">Dokumen  <?=$i ?></a>
+                                    <a href="{{url('show-data/kuisioner/'.$tingkat.'_'.$id.'/'.$i)}}" style="margin:10px;">Dokumen  <?=$i ?></a>
                                     <div class="container">
                                         <h4><b>Dokumen <?= $i ?></b></h4>
                                     </div>
