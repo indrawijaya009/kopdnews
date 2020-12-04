@@ -11,7 +11,7 @@
             <div>
                 <div class="row">
 
-                    @for ($i = 1; $i < 4; $i++)
+                    @for ($i = 1; $i < 6; $i++)
                      
                     <div class="col-sm-4">
                         <div class="card">

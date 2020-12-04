@@ -49,7 +49,7 @@ Route::delete('user/{users}','UserController@destroy');
 //     return Response::download($file, "Input Group.pdf", $headers);
 // });
 
-Route::get('downloadFile', 'KuisionerController@downloadFile');
+
 
 
 // Route::get('/kuisionertingkatI', 'KuisionerController@create')->name('kuisionertingkatI');
@@ -60,7 +60,7 @@ Route::get('downloadFile', 'KuisionerController@downloadFile');
 Route::get('/user/kuisioner', 'KuisionerController@store');
 
 Route::view('vie', 'user');
-
+Route::get('downloadFile', 'KuisionerController@downloadFile');
 
 Auth::routes();
 
@@ -182,13 +182,54 @@ Route::group(['middleware'=>['preventbackbutton','auth']], function(){
     Route::get('/pengukuran-kinerja-dokumen/{tingkat}/{id}', 'PengukuranKinerjaController@create')->name('pengukuran-kinerja');
     Route::post('/pengukuran-kinerja', 'PengukuranKinerjaController@insert')->name('pengukuran-kinerja');
 
+     //Pengembangan Inovasi
+     Route::get('/pengembangan-inovasi', function () {
+        return view('datahome/pengembangan-inovasi');
+    });
 
+    Route::get('/pengembangan-inovasi/{tingkat}', function () {
+        return view('datahome/tingkat/pengembangan-inovasi');
+    });
+
+    Route::get('/pengembangan-inovasi-dokumen/{tingkat}/{id}', 'PengukuranKinerjaController@create')->name('pengembangan-inovasi');
+    Route::post('/pengembangan-inovasi', 'PengukuranKinerjaController@insert')->name('pengembangan-inovasi');
+
+         //budaya organisasi
+         Route::get('/budaya-organisasi', function () {
+            return view('datahome/budaya-organisasi');
+        });
+    
+        Route::get('/budaya-organisasi/{tingkat}', function () {
+            return view('datahome/tingkat/budaya-organisasi');
+        });
+    
+        Route::get('/budaya-organisasi-dokumen/{tingkat}/{id}', 'PengukuranKinerjaController@create')->name('budaya-organisasi');
+        Route::post('/budaya-organisasi', 'PengukuranKinerjaController@insert')->name('budaya-organisasi');
+
+        
+         //pengendalian pelaksana
+         Route::get('/pengendalian-pelaksana', function () {
+            return view('datahome/pengendalian-pelaksana');
+        });
+    
+        Route::get('/pengendalian-pelaksana/{tingkat}', function () {
+            return view('datahome/tingkat/pengendalian-pelaksana');
+        });
+    
+        Route::get('/pengendalian-pelaksana-dokumen/{tingkat}/{id}', 'PengukuranKinerjaController@create')->name('pengendalian-pelaksana');
+        Route::post('/pengendalian-pelaksana', 'PengukuranKinerjaController@insert')->name('pengendalian-pelaksana');
+
+    
     Route::get('/dashboard/{id}', 'UserController@destroy')->name('dashboard.destroy');
     Route::get('/dashboard.show/{id}', 'UserController@show')->name('dashboard.show');
 
-    //SHOW DATA ADMIN
+    //SHOW DATA ADMIN kuisioner
     Route::get('/dokumen.show/kuisioner/{id}', 'DokumenController@kuisioner')->name('dokumen.show');
     Route::get('/show-data/kuisioner/{id}/{dokumen}', 'ShowDataController@kuisioner');
+
+    //SHOW DATA ADMIN rancangan pembangunan
+    Route::get('/dokumen.show/rancangan_pembangunan/{id}', 'DokumenController@rancangan_pembangunan')->name('dokumen.show');
+    Route::get('/show-data/rancangan_pembangunan/{id}/{dokumen}', 'ShowDataController@rancangan_pembangunan');
 
     Route::get('regis', function(){
         return view('auth/register');
@@ -199,5 +240,11 @@ Route::group(['middleware'=>['preventbackbutton','auth']], function(){
     
     Route::middleware('role:admin')->get('/dashboard', 'UserController@kuisione'
     )->name('dashboard');
+
+    // upload kuisioner
+    Route::post('/files', 'UploadkuisionerController@uploadfile');
+
+    //download file
+    
     
     });

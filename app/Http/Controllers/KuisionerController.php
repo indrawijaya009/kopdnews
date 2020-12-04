@@ -56,26 +56,62 @@ class KuisionerController extends Controller
                 $data->file1 = $new_name;
             }
 
-            if($request->file('file2') == null){
+            if($request->file('file2') == null ){
                 $pathsat = "";
             } else {
-                $pathsat= $request->file('file2')->store('public/tingkatI');
-                $data->file2 = $pathsat;
+                $pathsat= $request->file('file2');
+                
+                $extensi = $pathsat->getClientOriginalExtension();
+                $name = $pathsat->getClientOriginalName();
+                $new_name = date('y-m-d').'-'.$name;
+                $pathsat->move(public_path('storage/kuisioner'),$new_name);
+                $data->file2 = $new_name;
             }
 
-            if($request->file('file3') == null){
+            // if($request->file('file2') == null){
+            //     $pathsat = "";
+            // } else {
+            //     $pathsat= $request->file('file2')->store('public/tingkatI');
+            //     $data->file2 = $pathsat;
+            // }
+
+            if($request->file('file3') == null ){
                 $pathdua = "";
             } else {
-                $pathdua= $request->file('file3')->store('public/tingkatI');
-                $data->file3 = $pathdua;
+                $pathdua= $request->file('file3');
+                
+                $extensi = $pathdua->getClientOriginalExtension();
+                $name = $pathdua->getClientOriginalName();
+                $new_name = date('y-m-d').'-'.$name;
+                $pathdua->move(public_path('storage/kuisioner'),$new_name);
+                $data->file3 = $new_name;
             }
 
-            if($request->file('file4') == null){
+            // if($request->file('file3') == null){
+            //     $pathdua = "";
+            // } else {
+            //     $pathdua= $request->file('file3')->store('public/tingkatI');
+            //     $data->file3 = $pathdua;
+            // }
+
+            if($request->file('file4') == null ){
                 $path = "";
-            }else {
-                $path= $request->file('file4')->store('public/tingkatI');
-                $data->file4 = $path;
+            } else {
+                $path= $request->file('file4');
+                
+                $extensi = $path->getClientOriginalExtension();
+                $name = $path->getClientOriginalName();
+                $new_name = date('y-m-d').'-'.$name;
+                $path->move(public_path('storage/kuisioner'),$new_name);
+                $data->file4 = $new_name;
             }
+            
+            // if($request->file('file4') == null){
+            //     $path = "";
+            // }else {
+            //     $path= $request->file('file4')->store('public/tingkatI');
+            //     $data->file4 = $path;
+            // }
 
         
         $data->save();
@@ -96,12 +132,14 @@ class KuisionerController extends Controller
     public function downloadFile()
     {
        try{
-        return Storage::disk('local')->download("public/datapen.docx");
+        return Storage::disk('local')->download("public/uploadkuisioner/20-12-01-datapen.xlsx");
        }catch(\Exception $e){
 
            return $e->getMessage();
        }
-    }	
+    }
+
+    
 
 
 }

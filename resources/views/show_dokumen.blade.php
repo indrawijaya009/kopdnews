@@ -6,15 +6,33 @@
         <div class="col-md-12">
         <div class="card">
                 <div class="card-header">Dashboard</div>
-</div>
              </br>
                 <div>
+                <p>Kuisioner</p>
                     <div class="row">
-
                         @for ($i = 1; $i < 4; $i++)
                             <div class="col-sm-4">
                                 <div class="card">
                                     <a href="{{url('show-data/kuisioner/'.$tingkat.'_'.$id.'/'.$i)}}" style="margin:10px;">Dokumen  <?=$i ?></a>
+                                    <div class="container">
+                                        <h4><b>Dokumen <?= $i ?></b></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        @endfor
+
+                    </div>
+                </div>
+                </br>
+
+                </br>
+                <div>
+                <p>Rancangan Pembangunan</p>
+                    <div class="row">
+                        @for ($i = 1; $i < 4; $i++)
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <a href="{{url('show-data/rancangan_pembangunan/'.$tingkat.'_'.$id.'/'.$i)}}" style="margin:10px;">Dokumen  <?=$i ?></a>
                                     <div class="container">
                                         <h4><b>Dokumen <?= $i ?></b></h4>
                                     </div>
