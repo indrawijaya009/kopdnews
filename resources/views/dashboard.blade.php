@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-6">
                 <!-- <div class="card-header">Dashboard</div> -->
-                <a href="{{url('regis')}}" class="btn btn-primary" style="margin-left:42%;">Add user</a>
+                <!-- <a href="{{url('regis')}}" class="btn btn-primary" style="margin-left:42%;">Add user</a> -->
 
             </div>
         </div>

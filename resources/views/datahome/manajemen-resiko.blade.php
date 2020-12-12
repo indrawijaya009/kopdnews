@@ -11,23 +11,25 @@
             <div>
                 <div class="row">
 
-                    @for ($i = 1; $i < 4; $i++)
-                     
-                    <div class="col-sm-4">
+                    @for ($i = 1; $i < 6; $i++) <div class="col-sm-4">
+                        <br />
                         <div class="card">
-                            <a href="{{url('/manajemen-resiko/'.$i)}}" style="margin:10px;">Manajemen Resiko Tingkat <?= $i ?></a>
+                            <a href="{{url('/manajemen-resiko/'.$i)}}" style="margin:10px;">Manajemen Resiko Tingkat
+                                <?= $i ?></a>
                             <div class="container">
-                                <h4><b>Manajemen Resiko Tingkat <?= $i ?></b></h4>
+                                <h4><a href="{{url('/manajemen-resiko/'.$i)}}" style="margin:10px;">Manajemen Resiko
+                                        Tingkat
+                                        <?= $i ?></a></b></h4>
                             </div>
                         </div>
-                    </div>
-                    @endfor
-                    
-                   
                 </div>
-                </br>
+                @endfor
 
-                <!-- <a href="/downloadFile" class="btn btn-large pull-right"><i class="icon-download-alt"> </i> Download  </a>
+
+            </div>
+            </br>
+
+            <!-- <a href="/downloadFile" class="btn btn-large pull-right"><i class="icon-download-alt"> </i> Download  </a>
 
                 <form method="post" action="{{route('post_rcppemba')}}" enctype="multipart/form-data">
 
@@ -42,7 +44,7 @@
                     <button type="submit" class="btn btn-primary">Upload file </button>
                 </form> -->
 
-            </div>
         </div>
     </div>
-    @endsection
+</div>
+@endsection

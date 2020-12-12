@@ -13,7 +13,7 @@ class CreatePengembanganInovasiTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengembangan_inovasi', function (Blueprint $table) {
+        Schema::create('pengembangan_inos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });

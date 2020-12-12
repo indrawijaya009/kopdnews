@@ -8,21 +8,17 @@ use App\User;
 use App\Rcppem;
 use Storage;
 use Auth;
-// use Request;
-
 class RancanganPembangunanController extends Controller
 {
     public function datedua()
     {
         $data = "data";
         return view('user', compact(['data']));
-        // echo "$data";
     }
 
     public function showdata()
     {
         $kuisi =User::all();
-        // return view('user.create');
         return view('user', compact(['kuisi']));
        
     }
@@ -34,7 +30,6 @@ class RancanganPembangunanController extends Controller
 
     public function insert(Request $request)
     {
-        // dd($request);
         $user = Auth::user()->id;
         $data =new Rancangan_pembangunan([
             'user_id'        => $user,
@@ -66,14 +61,6 @@ class RancanganPembangunanController extends Controller
                 $pathsat->move(public_path('storage/rancangan_pembangunan'),$new_name);
                 $data->file2 = $new_name;
             }
-
-            // if($request->file('file2') == null){
-            //     $pathsat = "";
-            // } else {
-            //     $pathsat= $request->file('file2')->store('public/tingkatI');
-            //     $data->file2 = $pathsat;
-            // }
-
             if($request->file('file3') == null ){
                 $pathdua = "";
             } else {
@@ -85,14 +72,6 @@ class RancanganPembangunanController extends Controller
                 $pathdua->move(public_path('storage/rancangan_pembangunan'),$new_name);
                 $data->file3 = $new_name;
             }
-
-            // if($request->file('file3') == null){
-            //     $pathdua = "";
-            // } else {
-            //     $pathdua= $request->file('file3')->store('public/tingkatI');
-            //     $data->file3 = $pathdua;
-            // }
-
             if($request->file('file4') == null ){
                 $path = "";
             } else {
@@ -104,15 +83,6 @@ class RancanganPembangunanController extends Controller
                 $path->move(public_path('storage/rancangan_pembangunan'),$new_name);
                 $data->file4 = $new_name;
             }
-            
-            // if($request->file('file4') == null){
-            //     $path = "";
-            // }else {
-            //     $path= $request->file('file4')->store('public/tingkatI');
-            //     $data->file4 = $path;
-            // }
-
-        
         $data->save();
         return redirect('/home')->with('status','Data berhasil disimpan');
     }

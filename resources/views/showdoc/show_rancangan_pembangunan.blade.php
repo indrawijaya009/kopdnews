@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Show Data</div>
+                <div class="card-header">Show Data Rancangan Pembangunan</div>
             </div>
             </br>
             <div class="container">
@@ -77,7 +77,7 @@
                     <p>Name file 4</p>
                     <thead>
                         <tr>
-                            <th scope="col"  >#</th>
+                            <th scope="col">#</th>
                             <th scope="col">Nama</th>
                             <th scope="col">action</th>
                         </tr>
